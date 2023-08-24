@@ -1,0 +1,55 @@
+// function findFirstNonRepeatingElement(arr) {
+//   for (let i = 0; i < arr.length; i++) {
+//     let isRepeated = false;
+    
+//     for (let j = 0; j < arr.length; j++) {
+//       if (i !== j && arr[i] === arr[j]) {
+//         isRepeated = true;
+//         break;
+//       }
+//     }
+    
+//     if (!isRepeated) {
+//       return arr[i];
+//     }
+//   }
+
+//   // If no non-repeating element found, return null or any desired value
+//   return null;
+// }
+
+// // Example usage:
+// const arr = [2, 3, 4, 2, 3, 5];
+// const result = findFirstNonRepeatingElement(arr);
+// console.log(result); // Output: 4
+
+
+function findFirstNonRepeatingElement(arr) {
+    const frequencyMap = new Map();
+  
+    // Count the frequency of each element in the array
+    for (let i = 0; i < arr.length; i++) {
+      const element = arr[i];
+      if (frequencyMap.has(element)) {
+        frequencyMap.set(element, frequencyMap.get(element) + 1);
+      } else {
+        frequencyMap.set(element, 1);
+      }
+    }
+  
+    // Find the first non-repeating element
+    for (let [key, value] of frequencyMap) {
+      if (value === 1) {
+        return key;
+      }
+    }
+  
+    // If no non-repeating element found, return null or any desired value
+    return null;
+  }
+  
+  // Example usage:
+  const arr = [2, 3, 4, 2, 3, 5];
+  const result = findFirstNonRepeatingElement(arr);
+  console.log(result); // Output: 4
+  

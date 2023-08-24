@@ -1,0 +1,40 @@
+Recursion is a programming technique in which a function calls itself directly or indirectly to solve a problem. It is a powerful and elegant way to solve complex problems by breaking them down into smaller, more manageable subproblems.
+
+A recursive function typically has two main components:
+
+1. Base Case: It is the simplest form of the problem that can be solved directly without further recursion. The base case is essential to prevent the function from calling itself indefinitely and ensures that the recursion stops at some point.
+
+2. Recursive Case: This part involves breaking down the original problem into smaller subproblems that are of the same nature as the original problem, but with reduced complexity. The function calls itself to solve these smaller subproblems. The recursion continues until the base case is reached, and the results from the smaller subproblems are combined to get the final solution.
+
+A classic example of recursion is the factorial function, which calculates the factorial of a non-negative integer `n`. The factorial of `n` (denoted as `n!`) is the product of all positive integers from 1 to `n`. The recursive factorial function is defined as follows:
+
+```javascript
+function factorial(n) {
+  // Base case: factorial of 0 is 1
+  if (n === 0) {
+    return 1;
+  }
+  // Recursive case: n! = n * (n-1)!
+  else {
+    return n * factorial(n - 1);
+  }
+}
+```
+
+When you call `factorial(5)`, the function will recursively call itself as follows:
+
+```
+factorial(5) -> 5 * factorial(4)
+             -> 5 * (4 * factorial(3))
+             -> 5 * (4 * (3 * factorial(2)))
+             -> 5 * (4 * (3 * (2 * factorial(1))))
+             -> 5 * (4 * (3 * (2 * (1 * factorial(0)))))
+             -> 5 * (4 * (3 * (2 * (1 * 1))))
+             -> 5 * (4 * (3 * (2 * 1)))
+             -> 5 * (4 * (3 * 2))
+             -> 5 * (4 * 6)
+             -> 5 * 24
+             -> 120
+```
+
+Recursion is a powerful concept, but it requires careful design to ensure that the base case is reached and the recursion terminates correctly. When used appropriately, recursion can lead to elegant and efficient solutions for various problems. However, excessive or inefficient recursion can lead to stack overflow errors, as each recursive call consumes memory on the call stack.
