@@ -1,0 +1,77 @@
+To find the subarray of size K with the least average, you can use a sliding window approach. This approach efficiently computes the average of each subarray of size K while maintaining the minimum average found so far.
+
+Here's the JavaScript code to solve the problem:
+
+```javascript
+function subarrayWithLeastAverage(A, K) {
+  const N = A.length;
+  if (N < K || K <= 0) {
+    return -1; // Invalid input, return -1 as there is no valid subarray
+  }
+
+  let sum = 0;
+  for (let i = 0; i < K; i++) {
+    sum += A[i];
+  }
+  let minSum = sum;
+  let startIndex = 0;
+
+  for (let i = K; i < N; i++) {
+    sum += A[i] - A[i - K];
+    if (sum < minSum) {
+      minSum = sum;
+      startIndex = i - K + 1;
+    }
+  }
+
+  return startIndex;
+}
+
+// Test cases
+const A1 = [3, 7, 90, 20, 10, 50, 40];
+const K1 = 3;
+console.log(subarrayWithLeastAverage(A1, K1)); // Output: 3
+
+const A2 = [3, 7, 5, 20, -10, 0, 12];
+const K2 = 2;
+console.log(subarrayWithLeastAverage(A2, K2)); // Output: 4
+```
+
+In the `subarrayWithLeastAverage` function, we first handle invalid input cases where the length of the array is less than K or K is non-positive. If such cases are encountered, we return -1 as there is no valid subarray.
+
+Next, we initialize the `sum` variable with the sum of the first K elements of the array. Then, we use a sliding window approach to iterate through the array, adding the next element and removing the first element within the window. This way, we calculate the sum of each subarray of size K efficiently.
+
+We keep track of the minimum sum encountered so far (`minSum`) and the starting index of the subarray that has the least average (`startIndex`). When we find a new subarray with a smaller sum, we update these variables accordingly.
+
+After iterating through the entire array, the `startIndex` will represent the index of the first element of the subarray with the least average, and we return it as the result.
+
+
+Sure! Let's go through the `subarrayWithLeastAverage` function step by step:
+
+1. The function takes two parameters: `A` (the input array) and `K` (the size of the subarray to consider).
+
+2. It starts by calculating the length of the array `A` and stores it in the variable `N`.
+
+3. The function then checks for some invalid input conditions. If `N` is less than `K` or `K` is non-positive, it returns -1, indicating that there is no valid subarray to consider with the given `K`.
+
+4. Next, the function initializes the variable `sum` to 0. It will be used to store the sum of the first `K` elements of the array.
+
+5. It then enters a `for` loop that runs `K` times (from 0 to `K - 1`). During each iteration, it calculates the sum of the first `K` elements of the array by adding `A[i]` to `sum`.
+
+6. After the first loop, the variable `sum` will hold the sum of the first `K` elements of the array.
+
+7. It sets the variable `minSum` equal to `sum`. This variable will keep track of the minimum sum encountered so far while iterating through the array.
+
+8. The variable `startIndex` is initialized to 0. It will be used to keep track of the starting index of the subarray with the least average.
+
+9. The function then enters another `for` loop starting from `K` and running up to `N - 1`. This loop will help slide the window over the array to find subarrays of size `K` and calculate their averages.
+
+10. In each iteration of the second loop, the function first calculates the sum of the current subarray of size `K` using the formula `sum += A[i] - A[i - K]`. Here, `A[i]` represents the current element, and `A[i - K]` represents the element that will be removed from the subarray as the window slides forward.
+
+11. Next, the function compares the `sum` with `minSum`. If the current subarray's sum is less than the minimum sum encountered so far (`minSum`), it updates `minSum` to the current `sum` and updates `startIndex` to `i - K + 1`. This ensures that `startIndex` always points to the first element of the subarray with the least average.
+
+12. After the loop completes, the `startIndex` will represent the index of the first element of the subarray with the least average, and the function returns it as the result.
+
+13. The function has been tested with two test cases (`A1`, `K1`, `A2`, `K2`) to find the starting index of the subarray with the least average. The results are printed using `console.log`.
+
+By following this approach, the function efficiently finds the index of the first element of the subarray with the least average without the need for nested loops. It has a time complexity of O(N) as it traverses the input array only once.

@@ -1,0 +1,127 @@
+Sure! I'd be happy to explain the lines of code that are involved in converting binary strings to decimal numbers and vice versa:
+
+1. Function to convert binary string to decimal number:
+```javascript
+function binaryToDecimal(binaryStr) {
+  let decimal = 0;
+  let power = 0;
+  for (let i = binaryStr.length - 1; i >= 0; i--) {
+    decimal += parseInt(binaryStr.charAt(i)) * Math.pow(2, power);
+    power++;
+  }
+  return decimal;
+}
+```
+
+Explanation:
+- The function `binaryToDecimal` takes a binary string `binaryStr` as input and returns its decimal representation as an integer.
+- It initializes `decimal` to 0, which will be used to store the final decimal value of the binary string.
+- The variable `power` is initialized to 0. This variable will be used to calculate the appropriate power of 2 for each binary digit during the conversion process.
+- The function then iterates through the binary string from right to left (from the least significant bit to the most significant bit).
+- For each binary digit, it converts the character to an integer using `parseInt(binaryStr.charAt(i))`, where `i` is the current index in the loop.
+- It then multiplies the integer value of the binary digit with the appropriate power of 2 and adds it to the `decimal` variable.
+- The `power` variable is incremented by 1 in each iteration to handle the next power of 2.
+- Finally, the function returns the `decimal` value, which is the decimal representation of the input binary string.
+
+2. Function to convert decimal number to binary string:
+```javascript
+function decimalToBinary(decimal) {
+  if (decimal === 0) return "0";
+  let binary = "";
+  while (decimal > 0) {
+    binary = (decimal % 2) + binary;
+    decimal = Math.floor(decimal / 2);
+  }
+  return binary;
+}
+```
+
+Explanation:
+- The function `decimalToBinary` takes a decimal number `decimal` as input and returns its binary representation as a string.
+- It first checks if the input `decimal` is equal to 0. If so, it directly returns "0" since the binary representation of 0 is "0".
+- If the input `decimal` is not 0, the function initializes an empty string `binary`, which will be used to store the binary representation.
+- The function then enters a while loop that continues as long as `decimal` is greater than 0.
+- Inside the loop, the function calculates the remainder when dividing `decimal` by 2 using the expression `decimal % 2`. This remainder will be either 0 or 1, representing the binary digit for the current position.
+- The binary digit is then concatenated to the `binary` string by adding it to the beginning using `binary = (decimal % 2) + binary`.
+- Next, the `decimal` value is updated to be the result of the integer division of `decimal` by 2 using `decimal = Math.floor(decimal / 2)`. This effectively shifts the decimal number one bit to the right, removing the least significant bit.
+- The loop continues until `decimal` becomes 0.
+- Finally, the function returns the `binary` string, which is the binary representation of the input decimal number.
+
+These two functions work together to convert binary strings to decimal numbers and decimal numbers back to binary strings, allowing you to perform addition in decimal and then convert the result back to the binary representation.
+
+///Optimization explination
+
+function addBinaryStrings(A, B) {
+  let result = '';
+  let carry = 0;
+  let i = A.length - 1;
+  let j = B.length - 1;
+
+  while (i >= 0 || j >= 0 || carry > 0) {
+    const digitA = i >= 0 ? parseInt(A.charAt(i)) : 0;
+    const digitB = j >= 0 ? parseInt(B.charAt(j)) : 0;
+
+    const sum = digitA + digitB + carry;
+    const currentDigit = sum % 2;
+    carry = Math.floor(sum / 2);
+
+    result = currentDigit + result;
+
+    i--;
+    j--;
+  }
+
+  return result;
+}
+
+// Test cases
+console.log(addBinaryStrings("100", "11")); // Output: "111"
+console.log(addBinaryStrings("110", "10")); // Output: "1000"
+
+
+//Eplination
+Certainly! Let's go through the code step by step:
+
+1. `let result = '';`
+   - This line initializes an empty string `result`, which will store the final binary sum of strings `A` and `B`.
+
+2. `let carry = 0;`
+   - This line initializes a variable `carry` to 0. The `carry` is used to keep track of any carry generated during the binary addition process.
+
+3. `let i = A.length - 1;` and `let j = B.length - 1;`
+   - These lines initialize two variables `i` and `j` to the last index of strings `A` and `B`, respectively.
+   - These variables will be used to iterate through the binary strings from right to left (from the least significant bit to the most significant bit) during the binary addition process.
+
+4. `while (i >= 0 || j >= 0 || carry > 0) {`
+   - This line starts a while loop that continues as long as one of the following conditions is true:
+     - `i >= 0`: There are still digits left to process in string `A`.
+     - `j >= 0`: There are still digits left to process in string `B`.
+     - `carry > 0`: There's a carry from the previous addition that needs to be considered.
+   - The loop continues as long as there are digits to process in at least one of the binary strings (`A` or `B`) or if there's a carry that needs to be added to the sum.
+
+5. `const digitA = i >= 0 ? parseInt(A.charAt(i)) : 0;` and `const digitB = j >= 0 ? parseInt(B.charAt(j)) : 0;`
+   - These lines extract the current binary digits from strings `A` and `B`, respectively, and store them in variables `digitA` and `digitB`.
+   - The ternary operator `? :` is used here to check if `i` and `j` are valid indices. If they are, it retrieves the corresponding digits using `A.charAt(i)` and `B.charAt(j)` and converts them to integers using `parseInt`. If the indices are not valid (i.e., `i < 0` or `j < 0`), it means we have processed all the digits of the respective string, so `digitA` and `digitB` are set to 0.
+
+6. `const sum = digitA + digitB + carry;`
+   - This line calculates the sum of the current binary digits from string `A`, string `B`, and the carry.
+   - `digitA` and `digitB` represent the current binary digits of string `A` and `B`, respectively, at the current position in the loop.
+   - `carry` holds the carry value from the previous addition (if any).
+   - The sum of these three values is stored in the variable `sum`, representing the current digit in the result of the binary addition.
+
+7. `const currentDigit = sum % 2;` and `carry = Math.floor(sum / 2);`
+   - These lines calculate the current binary digit to be added to the result (`currentDigit`) and the new carry value for the next addition (`carry`).
+   - `currentDigit` is obtained by taking the remainder when dividing `sum` by 2 (`sum % 2`). This ensures that `currentDigit` will be either 0 or 1.
+   - `carry` is calculated by taking the integer division of `sum` by 2 (`Math.floor(sum / 2)`). This gives us the carry value to be added in the next iteration of the loop.
+
+8. `result = currentDigit + result;`
+   - This line appends the current binary digit (`currentDigit`) to the beginning of the `result` string.
+   - This is done to build the binary sum from right to left, as we are iterating through the binary strings from right to left.
+
+9. `i--;` and `j--;`
+   - These lines decrement the indices `i` and `j` to move to the next digits in strings `A` and `B`, respectively.
+   - This ensures that we move to the next position for the next iteration of the loop.
+
+10. After the loop finishes, the final binary sum is stored in the `result` variable, and the function returns `result`.
+
+The code uses a loop to add the binary digits of the two strings and handles any carry that may arise during the addition process. The result is built in reverse order and then returned as the final binary sum.

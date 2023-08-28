@@ -1,0 +1,41 @@
+JavaScript has numerous built-in functions that are available globally and can be used in your code without the need for any additional import or setup. Some of the commonly used built-in functions in JavaScript include:
+
+1. **parseInt() / parseFloat()**: Functions to convert strings into integers or floating-point numbers.
+
+2. **String()**: Used to convert a value into a string representation.
+
+3. **Number()**: Used to convert a value into a number representation.
+
+4. **Array()**: Creates a new array.
+
+5. **Object()**: Creates a new object.
+
+6. **typeof**: Returns the data type of a variable.
+
+7. **isNaN()**: Checks if a value is NaN (Not a Number).
+
+8. **isNaN()**: Checks if a value is a finite number.
+
+9. **parseInt() / parseFloat()**: Functions to convert strings into integers or floating-point numbers.
+
+10. **Math.random()**: Generates a random number between 0 (inclusive) and 1 (exclusive).
+
+11. **Math.floor() / Math.ceil() / Math.round()**: Functions to round numbers down, up, or to the nearest integer.
+
+12. **Math.min() / Math.max()**: Returns the minimum or maximum value from a set of numbers.
+
+13. **Date()**: Creates a new Date object to work with dates and times.
+
+14. **console.log()**: Used to print output to the browser console for debugging purposes.
+
+15. **alert() / prompt() / confirm()**: Functions to interact with users through pop-up dialogs.
+
+16. **setTimeout() / setInterval()**: Functions to execute code after a specified delay or at regular intervals.
+
+17. **JSON.parse() / JSON.stringify()**: Functions to parse JSON strings into JavaScript objects and vice versa.
+
+18. **Array methods**: JavaScript arrays come with built-in methods like `push()`, `pop()`, `shift()`, `unshift()`, `splice()`, `slice()`, `forEach()`, `map()`, `filter()`, `reduce()`, etc., for array manipulation.
+
+19. **String methods**: JavaScript strings have built-in methods like `charAt()`, `indexOf()`, `substring()`, `split()`, `replace()`, `toUpperCase()`, `toLowerCase()`, etc., for string manipulation.
+
+These are just some of the many built-in functions available in JavaScript. Understanding and utilizing these functions can significantly simplify your code and make your development process more efficient. For more details on each function and its usage, you can refer to the official JavaScript documentation or various online resources.
