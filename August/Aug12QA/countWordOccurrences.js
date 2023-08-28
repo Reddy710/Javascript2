@@ -1,4 +1,4 @@
-function countWordOccurrences(sentence, word) {
+function countWordOccurrences(sentence, tergetWord) {
     // Split the sentence into an array of words
     const words = sentence.split(' ');
   
@@ -6,8 +6,8 @@ function countWordOccurrences(sentence, word) {
     let count = 0;
   
     // Iterate through the words and count occurrences of the given word
-    for (const letter of words) {
-      if (letter === word) {
+    for (const word of sentence) {
+      if (word === tergetWord) {
         count++;
       }
     }

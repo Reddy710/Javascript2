@@ -1,0 +1,55 @@
+<!-- What happens when function is called - step wise instruction -->
+When a function is called in a programming language, a series of steps are executed to ensure that the function's code is executed and its result is returned. Here's a step-by-step explanation of what happens when a function is called:
+
+1. **Function Call:** A function call is initiated by the program when it encounters the function's name followed by parentheses. For example: `result = my_function(arg1, arg2)`.
+
+2. **Argument Passing:** If the function accepts arguments, the values or references of these arguments are passed to the function. The number and types of arguments must match the function's definition.
+
+3. **Function Entry:** The program transfers control to the function, which means the execution of the main program is temporarily suspended, and the function's code begins to execute.
+
+4. **Local Variables:** The function creates a new local scope. Local variables defined within the function are allocated memory in this scope. These variables are separate from variables with the same name in other scopes.
+
+5. **Function Execution:** The statements inside the function's code block are executed sequentially, just like any other code. This can include calculations, assignments, loops, conditionals, and other operations.
+
+6. **Returning a Value:** If the function is designed to return a value, the computed result is stored in a designated location. The function can have multiple return points (i.e., multiple `return` statements) depending on conditions or execution paths.
+
+7. **Function Exit:** Once the function completes its execution or encounters a `return` statement, it exits. The function's local scope is destroyed, and its local variables are deallocated.
+
+8. **Control Transfer:** Control is returned to the point in the main program from where the function was called. If the function returned a value, this value is passed back to the calling code.
+
+9. **Result Usage:** The result of the function call can be assigned to a variable, used in an expression, or manipulated further as needed.
+
+10. **Program Continuation:** The program continues executing the remaining instructions after the function call, unless the function call was the last instruction or the program's end.
+
+It's important to note that this sequence of steps might vary slightly depending on the programming language, as some languages might have additional complexities or optimizations. However, the general flow described above captures the fundamental process of what happens when a function is called and executed.
+
+
+<!-- 2. Resolving Merge conflict - steps to resolve this -->
+
+Resolving merge conflicts is a common task in version control systems like Git when two or more branches have made conflicting changes to the same portion of a file. Here are the steps to resolve a merge conflict:
+
+1. **Identify the Conflict:** When you attempt to merge two branches, if there are conflicting changes, Git will notify you about the conflicts. You'll typically see messages indicating which files have conflicts. You can use commands like `git status` to see the list of conflicted files.
+
+2. **Open the Conflicted File:** Use a text editor or an integrated development environment (IDE) to open the conflicted file. Inside the file, Git will mark the conflicting sections with special markers, such as `<<<<<<<`, `=======`, and `>>>>>>>`. These markers indicate the beginning and end of the conflicting sections.
+
+3. **Analyze the Conflict:** Examine the conflicting sections to understand what changes were made in each branch. You need to decide which changes to keep and which to discard. Make sure to consider the context of the changes and the overall functionality of the code.
+
+4. **Edit the File:** Edit the conflicted file to manually resolve the conflict. You can choose to keep one version of the changes, discard both versions, or create a new version that incorporates elements from both changes. Remove the conflict markers (`<<<<<<<`, `=======`, `>>>>>>>`) once you've resolved the conflict.
+
+5. **Save the File:** After resolving the conflict, save the file with your changes.
+
+6. **Stage the File:** Use the `git add` command to stage the resolved file. This indicates to Git that you've resolved the conflict in that particular file.
+
+7. **Commit the Merge:** Once all conflicts are resolved and files are staged, you can complete the merge by creating a new commit. Use the `git commit` command with an appropriate message that describes the merge and how you resolved the conflicts.
+
+8. **Push or Continue Merging:** If you were merging branches locally, you might need to push the changes to the remote repository using `git push`. If you were in the middle of a larger merge operation involving multiple branches, follow the instructions provided by your version control system to continue or complete the merge.
+
+9. **Cleanup:** Once the merge is successfully completed, you can delete any branches that were involved in the merge, if they are no longer needed.
+
+It's important to note that while the above steps outline the general process, resolving merge conflicts can sometimes be complex, especially when dealing with extensive conflicts or complex changes. Effective communication among team members is essential during conflict resolution.
+
+Additionally, using graphical tools like Git GUIs or integrated tools within IDEs can simplify the process by providing visual aids and streamlined workflows for conflict resolution.
+
+
+3. Diamond with star
+4. Given a sentence, find number of time the given word is repeated

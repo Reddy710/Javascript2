@@ -30,7 +30,7 @@
 
 
 
-// Assignment 3:////Doubt
+// Assignment 3:////Doubt need to correct this code
 // problem 1
 
 function equilibriumIndex(arr) {

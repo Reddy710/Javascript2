@@ -5,7 +5,7 @@
 //   console.log(key + ': ' + obj[key]);
 // }
 
-
+//  Using the `Object.keys()` method
 let obj = { name: 'John', age: 30, city: 'New York' };
 
 Object.keys(obj).forEach(function(key) {
