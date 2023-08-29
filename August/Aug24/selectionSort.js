@@ -8,13 +8,13 @@ function selectionSort(arr) {
                 min = arr[j];
                 minpos = j;
             }
-            let temp = arr[j];
-            arr[j] = arr[minpos];
-            arr[minpos] = temp;
         }
-        
+        let temp = arr[i];
+        arr[i] = arr[minpos];
+        arr[minpos] = temp;    
     }
     return arr;
 }let arr = [1,3,5,-1,-5,6,2,11];
 const result = selectionSort(arr);
 console.log(result);
+
