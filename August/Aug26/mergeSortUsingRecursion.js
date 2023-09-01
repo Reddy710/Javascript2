@@ -10,4 +10,4 @@ const arr = [4,8,-1,2,6,9,11,3,4,7,13,0];
 let s = 2;
 let e = 9;
 let result = mergeSort(arr,s,e);
-// console.log(result);
+console.log(result);
