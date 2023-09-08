@@ -18,8 +18,3 @@ function printAmazingSubstrings(S) {
 const inputString = "Amazing";
 const result = printAmazingSubstrings(inputString);
 console.log(result);
-
-
-  
-  
-  
