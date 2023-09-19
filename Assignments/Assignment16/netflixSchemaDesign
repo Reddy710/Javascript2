@@ -1,0 +1,44 @@
+-- Create the Users Table
+CREATE TABLE Users (
+    UserID NUMBER PRIMARY KEY,
+    Email VARCHAR2(255),
+    Password VARCHAR2(255)
+);
+
+-- Create the Profiles Table
+CREATE TABLE Profiles (
+    ProfileID NUMBER PRIMARY KEY,
+    UserID NUMBER REFERENCES Users(UserID),
+    Name VARCHAR2(50),
+    Type VARCHAR2(10) CHECK (Type IN ('KID', 'ADULT'))
+);
+
+-- Create the Videos Table
+CREATE TABLE Videos (
+    VideoID NUMBER PRIMARY KEY,
+    Title VARCHAR2(255),
+    Description CLOB,
+    Cast CLOB
+);
+
+-- Create the Actors Table
+CREATE TABLE Actors (
+    ActorID NUMBER PRIMARY KEY,
+    Name VARCHAR2(100)
+);
+
+-- Create the VideoActor Table (Many-to-Many Relationship)
+CREATE TABLE VideoActor (
+    VideoID NUMBER REFERENCES Videos(VideoID),
+    ActorID NUMBER REFERENCES Actors(ActorID),
+    PRIMARY KEY (VideoID, ActorID)
+);
+
+-- Create the VideoStatus Table
+CREATE TABLE VideoStatus (
+    VideoStatusID NUMBER PRIMARY KEY,
+    VideoID NUMBER REFERENCES Videos(VideoID),
+    ProfileID NUMBER REFERENCES Profiles(ProfileID),
+    Status VARCHAR2(20) CHECK (Status IN ('COMPLETED', 'IN PROGRESS')),
+    LastWatchTimestamp TIMESTAMP
+);
