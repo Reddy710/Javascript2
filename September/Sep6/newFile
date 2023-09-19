@@ -1,0 +1,63 @@
+https://www.programiz.com/javascript/examples/stack
+Mysql
+Mongo
+redis
+<!-- Differences -->
+MongoDB, MySQL, and Redis are all different types of database management systems, and each has its own strengths and use cases. Here's an overview of the key differences between them:
+
+1. Data Model:
+
+   - **MongoDB**:
+     - MongoDB is a NoSQL database, which means it is designed to handle unstructured or semi-structured data.
+     - It uses a flexible document-based data model, typically in BSON (Binary JSON) format, which allows for nested data structures and dynamic schemas.
+     - MongoDB is often used for applications with rapidly evolving schemas or complex data structures.
+
+   - **MySQL**:
+     - MySQL is a relational database management system (RDBMS) that uses structured tables with predefined schemas.
+     - It uses SQL (Structured Query Language) for querying and manipulating data.
+     - MySQL is a good choice for applications that require data integrity, transactions, and complex queries, and where the schema is well-defined.
+
+   - **Redis**:
+     - Redis is an in-memory data store often referred to as a data structure server.
+     - It stores data in key-value pairs, but the values can be more complex data structures like strings, lists, sets, and more.
+     - Redis is designed for high-speed data retrieval and caching and is commonly used as a caching layer or for real-time data processing.
+
+2. Use Cases:
+
+   - **MongoDB**:
+     - Suitable for applications with evolving or dynamic schemas, such as content management systems, IoT, and real-time analytics.
+     - Good for handling large volumes of semi-structured or unstructured data.
+
+   - **MySQL**:
+     - Ideal for applications where data integrity, ACID transactions, and complex querying are essential, such as e-commerce platforms, financial systems, and traditional relational data applications.
+
+   - **Redis**:
+     - Often used for caching frequently accessed data to reduce database load and improve application performance.
+     - Useful for real-time applications like leaderboards, messaging systems, and session management due to its low-latency data access.
+
+3. Persistence:
+
+   - **MongoDB**:
+     - MongoDB can be configured for both in-memory storage and persistence to disk.
+     - It offers more control over data durability with various write concern and journaling options.
+
+   - **MySQL**:
+     - MySQL is traditionally used with disk-based storage and provides robust data durability features with support for transactions and backups.
+
+   - **Redis**:
+     - Redis is primarily an in-memory database, but it can be configured to periodically save data to disk for persistence.
+     - Persistence in Redis is often used for data recovery rather than full data durability.
+
+4. Scalability:
+
+   - **MongoDB**:
+     - MongoDB provides horizontal scalability through sharding, which allows distributing data across multiple servers.
+     - Well-suited for handling large datasets and high write loads.
+
+   - **MySQL**:
+     - MySQL supports both vertical scaling (adding more resources to a single server) and some level of horizontal scaling with replication and clustering solutions.
+
+   - **Redis**:
+     - Redis can be clustered for horizontal scaling, and it is known for its high read and write throughput capabilities.
+
+In summary, the choice between MongoDB, MySQL, and Redis depends on the specific requirements of your application, including data structure, data volume, query complexity, and performance needs. Many modern applications use a combination of different databases to leverage the strengths of each for different aspects of their data management.
