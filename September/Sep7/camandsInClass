@@ -1,0 +1,89 @@
+use sql_store;
+
+SHOW TABLES;
+DESCRIBE sql_store.customers;
+
+DESCRIBE sql_store.order_items;
+
+
+SELECT * FROM customers;
+
+INSERT INTO customers
+VALUES
+(19, 'Alok', 'yada','1994-06-17','9977118811', 'MG road', 'Lucknow', 'UP', 5000),
+(16, 'Alok', 'yada','1994-06-17','9977118811', 'MG road', 'Lucknow', 'KA', 5000),
+(17, 'Alok', 'yada','1994-06-17','9977118811', 'MG road', 'Lucknow', 'AP', 5000),
+(18, 'Alok', 'yada','1994-06-17','9977118811', 'MG road', 'Lucknow', 'TS', 5000)
+;
+
+INSERT INTO customers
+VALUES
+( default,'Karan', 'yadav','1994-06-17','9977118811', 'Jayanagar', 'Lucknow', 'UP', 5000)
+;
+
+#showing the entry which can have nullable values
+INSERT INTO customers
+(customer_id, first_name, last_name, address, city, state, points)-- to improve readability of the query 
+VALUES
+( default,'Sharan', 'kumar', 'JPnagar', 'Lucknow', 'UP', 5000)
+;
+
+SELECT first_name, city, points FROM customers;
+
+#As keyword or aliasing
+SELECT first_name, city, points AS pincode FROM customers;
+
+# read the data by doing certain operation on the column values
+SELECT first_name, city, points + 500 AS updatedpoints FROM customers;
+
+#to get unique values from the column
+SELECT DISTINCT first_name FROM customers;
+SELECT DISTINCT first_name, points FROM customers;
+
+
+# Get all the customers whose squre of points > 1 million (10^6)
+SELECT * FROM customers
+WHERE points*points > 1000000;
+
+#>,< >=, <=, =, (<> not equal)
+#Get me the customers who are born in  and after 1985 or have points >= 4000
+#logical operators AND,OR, NOT
+SELECT * FROM customers
+WHERE  points >=4000 OR birth_date >='1985-01-01';
+
+SELECT * FROM customers
+WHERE  points >=4000 OR (birth_date >='1985-01-01' AND state = 'KA');
+
+#IN operator
+SELECT * FROM customers
+WHERE customer_id IN (1,2,3,4,5);
+
+#BETWEEN operator
+SELECT * FROM customers
+WHERE customer_id BETWEEN 1 AND 5
+;
+
+#order data on basis of an attributes
+SELECT * FROM customers
+WHERE customer_id BETWEEN 1 AND 5
+order by first_name;
+
+# list all entries whose address have 'nagar'
+#Like operator helps for recognising a particular pattern using two special characters % and _
+# % matches all character
+# _ matches single character
+SELECT * FROM customers
+WHERE address LIKE '%naga%';
+
+#LIMIT helps in limiting the o/p count
+SELECT * FROM customers
+WHERE points >= 2000
+order by points DESC
+LIMIT 5;
+
+#To check where a column value is null
+SELECT * FROM customers
+WHERE phone is null;
+
+SELECT * FROM customers
+WHERE phone is not null;
