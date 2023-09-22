@@ -1,0 +1,67 @@
+create database users;
+show databases;
+use users;
+show databases;
+
+create table user(
+user_id int(10),
+username varchar(30),
+email varchar(40),
+password varchar(20),
+phonenumber int(10),
+primary key(user_id));
+
+desc user;
+use users;
+show tables;
+
+create table product(
+product_id int(10),
+product_type varchar(30),
+product_name varchar(30), 
+product_quantity int(30),
+amount int(10),
+product_rating  int(5),
+primary key(product_id));
+
+desc product;
+
+
+create table shipper(
+shipper_id int(10),
+shipper_name  varchar(40),
+phonenumber int(10),
+primary key(shipper_id));
+desc shipper;
+
+
+create table address(
+address_id int(10),
+user_id int(10),
+address varchar(60),
+district varchar(20),
+state varchar(20),
+country varchar(20),
+primary key(address_id),
+foreign key(user_id) references user(user_id));
+desc address;
+
+
+create table orders(
+order_id int(10),
+user_id int(10),
+shipped_date date,
+delivery_date date,
+quantity int(10),
+total_amount int(10),
+product_id int(10),
+shipper_id int(10),
+address_id int(10),
+primary key(order_id),
+foreign key(user_id) references user(user_id),
+foreign key(shipper_id) references shipper(shipper_id),
+foreign key(product_id) references product(product_id),
+foreign key(address_id) references address(address_id));
+desc orders;
+
+alter table product add(color varchar(20));

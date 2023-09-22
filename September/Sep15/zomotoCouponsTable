@@ -4,8 +4,23 @@ CREATE TABLE Users (
     Username VARCHAR(255),
     Email VARCHAR(255),
     Password VARCHAR(255),
+    Phone number VARCHAR(12),
+    DOB  VARCHAR(10),
+    Gender VARCHAR(10);
     -- Other user-related information columns go here
 );
+
+-- Create the address table
+CREATE TABLE Address(
+    AddressID INT(10),
+    UserID INT(10),
+    Address VARCHAR(60),
+    District VARCHAR(20),
+    State VARCHAR(20),
+    Country VARCHAR(20),
+    PRIMARY KEY(AddressID),
+    FOREIGN KEY(UserID) REFERENCES Users (UserID)),
+    DESCRIBE address;
 
 -- Create the Restaurants Table
 CREATE TABLE Restaurants (
@@ -16,6 +31,7 @@ CREATE TABLE Restaurants (
     ContactInformation VARCHAR(255),
     CuisineType VARCHAR(100),
     AverageRating DECIMAL(3, 2), -- Assuming average rating is stored as a decimal
+    FOREIGN KEY (AddressID) REFERENCES Address(AddressID),
     -- Other restaurant-related columns go here
 );
 
