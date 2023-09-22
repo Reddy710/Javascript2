@@ -1,0 +1,91 @@
+-- Create the Users Table
+CREATE TABLE Users (
+    UserID INT PRIMARY KEY,
+    Username VARCHAR(255),
+    Email VARCHAR(255),
+    Password VARCHAR(255),
+    -- Other user-related information columns go here
+);
+
+-- Create the Restaurants Table
+CREATE TABLE Restaurants (
+    RestaurantID INT PRIMARY KEY,
+    Name VARCHAR(255),
+    Description TEXT,
+    Address VARCHAR(255),
+    ContactInformation VARCHAR(255),
+    CuisineType VARCHAR(100),
+    AverageRating DECIMAL(3, 2), -- Assuming average rating is stored as a decimal
+    -- Other restaurant-related columns go here
+);
+
+-- Create the Reviews Table
+CREATE TABLE Reviews (
+    ReviewID INT PRIMARY KEY,
+    UserID INT,
+    RestaurantID INT,
+    Rating INT CHECK (Rating BETWEEN 1 AND 5),
+    Comment TEXT,
+    Timestamp TIMESTAMP,
+    FOREIGN KEY (UserID) REFERENCES Users(UserID),
+    FOREIGN KEY (RestaurantID) REFERENCES Restaurants(RestaurantID)
+);
+
+-- Create the Menu Items Table
+CREATE TABLE MenuItems (
+    MenuItemID INT PRIMARY KEY,
+    RestaurantID INT,
+    Name VARCHAR(255),
+    Description TEXT,
+    Price DECIMAL(10, 2), -- Assuming price is stored as a decimal
+    FOREIGN KEY (RestaurantID) REFERENCES Restaurants(RestaurantID)
+);
+
+-- Create the Orders Table
+CREATE TABLE Orders (
+    OrderID INT PRIMARY KEY,
+    UserID INT,
+    RestaurantID INT,
+    OrderDateTime TIMESTAMP,
+    TotalPrice DECIMAL(10, 2),
+    OrderStatus VARCHAR(20), -- You can define valid order statuses
+    FOREIGN KEY (UserID) REFERENCES Users(UserID),
+    FOREIGN KEY (RestaurantID) REFERENCES Restaurants(RestaurantID)
+);
+
+-- Create the OrderItems Table (Many-to-Many Relationship)
+CREATE TABLE OrderItems (
+    OrderID INT,
+    MenuItemID INT,
+    Quantity INT,
+    PRIMARY KEY (OrderID, MenuItemID),
+    FOREIGN KEY (OrderID) REFERENCES Orders(OrderID),
+    FOREIGN KEY (MenuItemID) REFERENCES MenuItems(MenuItemID)
+);
+
+-- Create the Favorites Table
+CREATE TABLE Favorites (
+    UserID INT,
+    RestaurantID INT,
+    PRIMARY KEY (UserID, RestaurantID),
+    FOREIGN KEY (UserID) REFERENCES Users(UserID),
+    FOREIGN KEY (RestaurantID) REFERENCES Restaurants(RestaurantID)
+);
+
+-- Create the Images Table (for restaurant images)
+CREATE TABLE Images (
+    ImageID INT PRIMARY KEY,
+    RestaurantID INT,
+    ImageURL VARCHAR(255), -- Assuming URL for the image
+    FOREIGN KEY (RestaurantID) REFERENCES Restaurants(RestaurantID)
+);
+
+-- Crate coupons Table
+CREATE TABLE Coupons (
+    CouponID NUMBER PRIMARY KEY,
+    CouponValue NUMBER(10, 2) NOT NULL,
+    CouponType VARCHAR2(20) CHECK (CouponType IN ('generic', 'user-specific')) NOT NULL,
+    UserID NUMBER REFERENCES Users(UserID), -- Assuming FK reference to the Users table
+    CouponStatus VARCHAR2(20) NOT NULL,
+    CouponExpiry DATE NOT NULL
+);
