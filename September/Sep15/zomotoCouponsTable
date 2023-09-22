@@ -101,7 +101,7 @@ CREATE TABLE Coupons (
     CouponID NUMBER PRIMARY KEY,
     CouponValue NUMBER(10, 2) NOT NULL,
     CouponType VARCHAR2(20) CHECK (CouponType IN ('generic', 'user-specific')) NOT NULL,
-    UserID NUMBER REFERENCES Users(UserID), -- Assuming FK reference to the Users table
+    FOREIGN KEY (UserID) REFERENCES Users(UserID),
     CouponStatus VARCHAR2(20) NOT NULL,
     CouponExpiry DATE NOT NULL
 );
