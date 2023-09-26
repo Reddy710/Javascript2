@@ -1,0 +1,16 @@
+use employees;
+
+SELECT * FROM employees;
+
+SELECT COUNT(*) FROM employees; 
+
+SELECT * FROM employees
+WHERE first_name='Georgi';
+
+EXPLAIN SELECT * FROM employees
+WHERE first_name='Georgi';
+
+#To create healper table
+CREATE INDEX idx_first_name ON employees(first_name);
+
+DROP INDEX idx_first_name ON employees;
