@@ -110,5 +110,3 @@ cheat sheet for SQL (Structured Query Language)
   ```sql
   CREATE TABLE table_name (column1 INT UNIQUE);
   ```
-
-These are some of the fundamental SQL commands and concepts. SQL is a rich language with many more features, so this cheat sheet covers the basics to get you started.
