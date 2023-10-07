@@ -1,0 +1,63 @@
+/* * {
+    margin: 10px;
+    padding: 10px;
+
+} */
+header {
+    text-align: center;
+    background-color: grey;
+    color: rebeccapurple;
+    padding: 5px;
+}
+h2 {
+    text-align: center;
+}
+/* 
+h1{
+    background-color: white;
+    width: 400px;
+    margin: 10px;
+} */
+body {
+    margin : 100px 200px 400px 200px;
+    overflow: hidden;
+}
+
+
+main{
+    background-color: chartreuse;
+    /* margin: 10px; */
+
+    /* short hand form for TB and LR
+    margin: 10px 5px; 
+    /* top, right, botton, left */
+   margin: 10px 20px 15px 5px;
+    padding: 5px;
+    border: 2px dotted black;
+}
+
+img {
+    max-width: 500px;
+    height: 300px;
+    border-radius: 100%;
+}
+.c1 {
+    background-color: white;
+    color: gold;
+}
+.c2 {
+    background-color: whitesmoke;
+    color: brown;
+}
+/* .circle{
+    margin:10px auto;
+    background-color: burlywood;
+    border: 3px solid black;
+    width: 200px;
+    height: 200px;
+    border-radius: 100px;
+
+} */
+article{
+    background-color: beige;
+}

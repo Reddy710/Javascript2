@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Feedback Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
+
+        h2 {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        form {
+            max-width: 400px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        p {
+            margin: 10px 0;
+        }
+
+        label {
+            display: block;
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        textarea {
+            resize: vertical;
+        }
+
+        label[for="rating"] {
+            font-weight: normal;
+            margin-top: 10px;
+            display: block;
+        }
+
+        input[type="radio"] {
+            margin-right: 5px;
+        }
+
+        input[type="submit"] {
+            background-color: #007acc;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #0055a5;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>Feedback Form</h2>
+    <form action="submit_feedback.php" method="post">
+        <p>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+        </p>
+        <p>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+        </p>
+        <p>
+            <label for="feedback">Feedback:</label>
+            <textarea id="feedback" name="feedback" rows="4" required></textarea>
+        </p>
+        <p>
+            <label for="rating">Rating:</label>
+            <input type="radio" name="rating" value="5" id="rating-5" required><label for="rating-5">5</label>
+            <input type="radio" name="rating" value="4" id="rating-4"><label for="rating-4">4</label>
+            <input type="radio" name="rating" value="3" id="rating-3"><label for="rating-3">3</label>
+            <input type="radio" name="rating" value="2" id="rating-2"><label for="rating-2">2</label>
+            <input type="radio" name="rating" value="1" id="rating-1"><label for="rating-1">1</label>
+        </p>
+        <p>
+            <input type="submit" value="Submit Feedback">
+        </p>
+    </form>
+</body>
+
+</html>
