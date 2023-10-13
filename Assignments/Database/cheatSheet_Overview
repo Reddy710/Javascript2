@@ -1,0 +1,12 @@
+Start with requirement analysis, in that we will see nouns, if noun is expandable to multiple information we will dedicate a table for it.
+After that we have establish the relation between the tables using FK and relations 1:1, 1:N, N:1, N:N cordinalities. Based on this informmation we have to draw a schema design.
+Once schema design is ready we have to perform CRUD(Create, Retrive, Update, Delete) operations in inserting data into tables
+Agregate function
+Date and time
+Joins
+Trensactions(Read Uncommited, Read Commited, Repeatable Read, Serialization) and isolation techniques
+subquires
+Indexing(healper table) which uses Binary Search technique
+Views.
+
+Whole idea of Database Management System is to store the data in efficiently and retrive it efficiently. 

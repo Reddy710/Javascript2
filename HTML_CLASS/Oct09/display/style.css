@@ -1,0 +1,12 @@
+body{
+    font-size: 2rem;
+}
+p{
+    background-color: grey;
+}
+
+span{
+    display: inline-block;
+    background-color: black;
+    
+}

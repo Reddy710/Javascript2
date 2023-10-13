@@ -1,0 +1,23 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+ body{
+    background-color: aqua;
+ }
+ main{
+    background-color: bisque;
+    height: 100%;
+    display: grid;
+    /* grid-template-columns:200px, 200px, 200px ; */
+    grid-template-columns:1fr, 1fr, 1fr ;
+    grid-template-rows: 50px, 50px;
+   
+
+ }
+
+ .box{
+    background-color: blanchedalmond;
+    border: 2px solid black;
+ }

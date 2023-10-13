@@ -1,0 +1,41 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: aqua;
+    margin:10%;
+    color: blue;
+}
+
+main{
+    border: 2px solid black;
+    height:600px;
+    width: 600px;
+    margin: 150px auto;
+}
+
+article{
+    border: 2px solid black;
+    height:300px;
+    width: 300px;
+    margin: 150px auto;
+    position: relative;
+
+}
+section{
+    height: 50px;
+    width: 50px;
+    border: 2px solid black;
+    
+}
+.s1{
+    /* position: static; -- default behaviour */
+    /* position: absolute;  -- we can place the things according to our requirement  */
+    /* position: relative; --- with the current refference it move */
+    /* position: fixed; given priority it won't chnge once we use this property*/
+    position: sticky; 
+    top: 0px;
+    right:10px;
+}

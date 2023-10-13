@@ -1,0 +1,31 @@
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: aqua;
+}
+ .navbar{
+    font-size: 2em;
+    background-color: burlywood;
+    display: flex;
+    justify-content: start;
+ }
+ .navbar div{
+    border: 2px dotted black;
+    padding: 2px;
+    flex-grow: 1;
+ }
+ /* .profile{
+    margin-left: auto;
+ } */
+ /* .about{
+    margin-left: auto;
+ } */
+
+ .navbar .services{
+    flex-grow: 4;
+ }

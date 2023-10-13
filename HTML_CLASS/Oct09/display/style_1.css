@@ -1,0 +1,31 @@
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box
+}
+body{
+    font: size 1.5rem;
+}
+
+nav{
+    background-color: black;
+}
+
+ol{
+    list-style-type: none;
+}
+li{
+    border: 2px dotted white;
+    display: inline-block;
+    padding:6px;
+    margin:2px;
+}
+ol li a{
+    color: white;
+    text-decoration: none;
+}
+
+ol li a:hover{
+    color: white;
+    background-color: antiquewhite;
+}

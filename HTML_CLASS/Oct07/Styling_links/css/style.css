@@ -1,0 +1,27 @@
+*{
+    margin: 0;
+
+    padding: 0;
+}
+body{
+    background-color: aqua;
+    font-family: sans-serif;
+    font-size: 1.5rem;
+    margin: 15%;
+}
+header{
+    background-color: blueviolet;
+    margin: 4px;
+    text-align: center;
+}
+main{
+    background-color: burlywood;
+}
+a{
+    text-decoration: none;
+    color: brown;
+}
+a:hover{
+    color: wheat;
+    background-color: black;
+}

@@ -1,0 +1,12 @@
+.img1{
+    border: 2px solid black;
+    float:left;
+    margin-right:6px;
+
+}
+.img2{
+    border: 2px solid black;
+    float:right;
+    margin-right:6px;
+
+}
