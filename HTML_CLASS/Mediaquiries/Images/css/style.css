@@ -1,0 +1,38 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Times New Roman', Times, serif;
+    background-color: antiquewhite;
+    min-height: 100vh;
+}
+.profile{
+    background-color: bisque;
+    padding: 2px;
+    display: flex;
+    gap: 10 px;
+    background-image: url("../img/scenery.avif");
+    /* background-repeat: no-repeat;
+    background-size: cover; */
+
+}
+
+figure{
+    width: 25%;
+}
+figure, h2{
+    /* border: 2px solid black; */
+    color: black;
+}
+.profile img{
+    width: 100%;
+    height: auto;
+    border: 2px double black;
+    border-radius: 50%;
+}
+h1{
+    font-size: 2rem;
+}

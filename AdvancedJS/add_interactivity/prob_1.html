@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn-1"> Say Hello</button>
+    <script>
+        //Q1 on clicking the Buttton appemnd hello to the page
+        console.log("hello")
+        console.log(document)
+
+        let button = document.querySelector('#btn-1')
+        button.addEventListener('click', function(e)
+        {
+            //console.log(e)
+            let body = document.querySelector('body')
+            let paraElem = document.createElement('p')
+            paraElem.innerText="Hello Word"//<p> "Hello world"</p>
+            body.append(paraElem)
+        })
+    </script>
+</body>
+</html>

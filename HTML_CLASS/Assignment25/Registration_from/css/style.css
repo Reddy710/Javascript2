@@ -1,0 +1,138 @@
+/* *{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box
+}
+body{
+    background-color: grey;
+}
+.top nav{
+    background-color: white;
+    display: inline-block;
+    
+}
+.top div nav ol li{
+    border: 2px dotted white;
+    display: inline-block;
+    padding:6px;
+    margin:2px;
+} */
+
+/* Reset default margin and padding for all elements */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Set a background color for the body */
+body {
+    background-color: grey;
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+}
+.top {
+    background-color: white;
+    margin: 15px;
+    padding: 30px;
+    display: flex;
+    flex-grow: 1px;
+    justify-content: center;
+}
+.middile-top {
+    background-color: white;
+    margin: 15px;
+    padding: 30px;
+    display: flex;
+    flex-grow: 1px;
+    justify-content: center;
+}
+.middile {
+    background-color:#333;
+    margin: 15px;
+    padding: 30px;
+    display: flex;
+    flex-grow: 1px;
+}
+
+.middile-bottom {
+    background-color:white;
+    margin: 15px;
+    padding: 30px;
+    display: flex;
+    flex-grow: 1px;
+}
+.bottom {
+    background-color:white;
+    margin: 15px;
+    padding: 30px;
+    display: flex;
+    flex-grow: 1px;
+    justify-content: center;
+}
+/* Style the navigation links */
+nav ol {
+    list-style: none;
+    display: flex;
+}
+nav hr{
+    margin: 20px;
+    color: #333; 
+    border: 0; 
+    background-color: #333; /* Set the background color of the line */
+    height: 0px;
+}
+
+/* Style the custom buttons */
+.custom-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: whitesmoke;
+    color: blue;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 20px;
+}
+
+.custom-button:hover {
+    background-color: wheat;
+}
+
+/* Style the custom text input fields */
+.custom-textbox {
+    padding: 10px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    width: 200px;
+    margin-right: 20px;
+}
+
+#myText.custom-textbox {
+    margin: 0 auto;
+}
+
+/* Media query for smaller screens */
+/* @media (max-width: 768px) {
+    nav ol {
+        flex-direction: column;
+    }
+
+    nav ol li {
+        margin: 5px 0;
+    }
+
+    .custom-button,
+    .custom-textbox {
+        width: 100%;
+        margin: 5px 0;
+    }
+
+    #myText.custom-textbox {
+        margin: 0;
+    }
+} */
+
+

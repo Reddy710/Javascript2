@@ -1,0 +1,53 @@
+Hashing is a technique used to map data to a fixed size data structure, called a hash table or hash map, where data is stored in key-value pairs. Hashing provides efficient data retrieval by using a hash function to calculate an index or location where data can be stored and later retrieved.
+
+Here's an example problem and how hashing techniques can be applied to solve it:
+
+**Problem: Design a phone book that allows you to add, remove, and search for phone numbers efficiently.**
+
+**Solution using Hashing:**
+
+In this problem, you can use a hash map to create a phone book where names (keys) are associated with phone numbers (values). Hashing will allow for efficient storage and retrieval of phone numbers based on names.
+
+Here's how you can implement it:
+
+```javascript
+class PhoneBook {
+  constructor() {
+    this.contacts = {}; // Create an empty hash map to store contacts.
+  }
+
+  // Add a contact to the phone book.
+  addContact(name, phoneNumber) {
+    this.contacts[name] = phoneNumber;
+  }
+
+  // Remove a contact from the phone book.
+  removeContact(name) {
+    if (name in this.contacts) {
+      delete this.contacts[name];
+    }
+  }
+
+  // Search for a contact by name and return their phone number.
+  searchContact(name) {
+    if (name in this.contacts) {
+      return this.contacts[name];
+    } else {
+      return "Contact not found";
+    }
+  }
+}
+
+// Example usage:
+const phoneBook = new PhoneBook();
+phoneBook.addContact("Alice", "123-456-7890");
+phoneBook.addContact("Bob", "987-654-3210");
+
+console.log(phoneBook.searchContact("Alice")); // Output: "123-456-7890"
+console.log(phoneBook.searchContact("Charlie")); // Output: "Contact not found"
+
+phoneBook.removeContact("Bob");
+console.log(phoneBook.searchContact("Bob")); // Output: "Contact not found"
+```
+
+In this example, the `PhoneBook` class uses a hash map to store contacts efficiently. When you add a contact, the name is used as the key, and the phone number is stored as the value. When you search for a contact, the hash map allows for quick access to the associated phone number. The `removeContact` method deletes the entry from the hash map. Hashing ensures that these operations are performed in near constant time, making the phone book efficient.

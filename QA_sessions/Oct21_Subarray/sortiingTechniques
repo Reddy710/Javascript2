@@ -1,0 +1,39 @@
+There are various sorting algorithms, each with its own advantages, disadvantages, and use cases. Here are some of the most common types of sorting algorithms:
+
+1. **Bubble Sort:**
+   Bubble sort repeatedly steps through the list, compares adjacent elements, and swaps them if they are in the wrong order. It has a time complexity of O(n^2).
+
+2. **Selection Sort:**
+   Selection sort divides the input list into two parts: a sorted and an unsorted subarray. It repeatedly selects the minimum element from the unsorted subarray and moves it to the sorted subarray. Its time complexity is O(n^2).
+
+3. **Insertion Sort:**
+   Insertion sort builds the final sorted array one item at a time. It is much less efficient on large lists than more advanced algorithms such as quicksort, heapsort, or merge sort. It has a time complexity of O(n^2).
+
+4. **Quick Sort:**
+   Quick sort is a divide-and-conquer algorithm. It works by selecting a 'pivot' element from the array and partitioning the other elements into two sub-arrays according to whether they are less than or greater than the pivot. It has an average time complexity of O(n log n) but can degrade to O(n^2) in the worst case.
+
+5. **Merge Sort:**
+   Merge sort is also a divide-and-conquer algorithm. It divides the array into two halves, sorts them, and then merges the two sorted halves. It has a time complexity of O(n log n).
+
+6. **Heap Sort:**
+   Heap sort is a comparison-based sorting algorithm that uses a binary heap data structure. It has a time complexity of O(n log n) and is often used for in-place sorting.
+
+7. **Radix Sort:**
+   Radix sort is a non-comparative integer sorting algorithm that sorts data with integer keys by grouping keys by the individual digits that share the same significant position and value.
+
+8. **Counting Sort:**
+   Counting sort is an integer sorting algorithm that works by counting the number of objects with distinct key values and using arithmetic to determine their positions in the output.
+
+9. **Bucket Sort:**
+   Bucket sort is a distribution sort that works by dividing the data into "buckets," then sorting each bucket individually. It is often used for sorting data uniformly distributed across a range.
+
+10. **Tim Sort:**
+    Tim sort is a hybrid sorting algorithm derived from merge sort and insertion sort. It is used in Java and Python's built-in sorting routines.
+
+11. **Cycle Sort:**
+    Cycle sort is an in-place, unstable sorting algorithm, based on the idea of the cycle detection problem in graph theory. It is not widely used for general sorting but can be efficient in some cases.
+
+12. **Pancake Sort:**
+    Pancake sort is a sorting algorithm that involves sorting a disordered stack of pancakes in order of size. It is not used in practical applications but serves as an interesting sorting problem.
+
+Each sorting algorithm has its own strengths and weaknesses, and the choice of which one to use depends on the specific requirements and constraints of a given problem. The efficiency of sorting algorithms may vary based on the input data and the specific implementation.

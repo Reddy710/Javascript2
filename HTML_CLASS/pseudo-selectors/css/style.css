@@ -1,0 +1,22 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header{
+    background-color: green;
+}
+nav{
+    background-color: bisque;
+}
+nav::before{
+    content: "I am before element";
+    border: 2px solid black;
+    display:block;
+    }
+
+nav::after{
+    content: "I am after element";
+    border: 2px solid black;
+}

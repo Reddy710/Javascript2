@@ -1,0 +1,41 @@
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: bisque;
+}
+
+  .box {
+    width: 200px;
+    height: 200px;
+    background-color: blueviolet;
+    position: absolute;
+    border: 4px solid black;
+  }
+
+  .top-left {
+    background-color: aqua;
+    top: 0;
+    left: 0;
+  }
+
+  .top-right {
+    background-color:brown ;
+    top: 0;
+    right: 0;
+  }
+
+  .bottom-left {
+    background-color: aliceblue;
+    bottom: 0;
+    left: 0;
+  }
+
+  .bottom-right {
+    background-color: green;
+    bottom: 0;
+    right: 0;
+  }

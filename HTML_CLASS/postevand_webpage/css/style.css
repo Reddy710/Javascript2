@@ -1,0 +1,21 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color:white;
+}
+ .navbar{
+    font-size: 2em;
+    text-align: center;
+    background-color: white;
+    display: flex;
+    justify-content: start;
+ }
+ .navbar div{
+    border: 1px solid black;
+    padding: 2px;
+    flex-grow: 1;
+ }
