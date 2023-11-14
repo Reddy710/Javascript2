@@ -1,0 +1,99 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+img{
+    width: 40%;
+    height: auto;
+}
+body {
+    font-family: Arial, sans-serif;
+    background-color:white;
+    margin: 0;
+    display: flex;
+    align-items: center;
+}
+a{
+    text-decoration: none;
+    color: initial;
+    font-weight: normal;
+    background-color: transparent;
+    border: none;
+}
+form{
+    margin-left: 30px;
+    max-width: 600px;
+    text-align: center;
+    padding: 15px 20px;
+}
+h1{
+    width: 100%;
+    text-align: left;
+    margin-bottom: 30px;
+}
+h2{
+    text-align: left;
+    margin-bottom: 10px;
+}
+h3{
+    text-align: left;
+}
+button[type="gmail_button"],
+button[type="Apple_button"]{
+    width: 100%;
+    margin: 10px 0px;
+    padding: 10px 20px;
+    border: 1px solid whitesmoke;
+    border-radius: 20px;                                                
+    background-color: whi;
+    font-weight: 200;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+button[type="Apple_button"] img{
+    width: 10%;
+}
+button[type="create_button"]{
+    width: 100%;
+    margin: 10px 0px;
+    padding: 10px 20px;
+    border-radius: 20px;
+    border: none;
+    background-color: deepskyblue;
+    color: white;
+    font-weight: 200;
+    cursor: pointer;
+}
+
+form p{
+    font-size: x-small;
+    margin-bottom:40px;
+}
+form a{
+    color: blue;
+}
+button[type="Signin_button"]{
+    width: 100%;
+    margin: 10px 0px;
+    padding: 10px 20px;
+    border-radius: 20px;
+    border: transparent;
+    background-color:whitesmoke;
+    color:blue;
+    font-weight: 200;
+    cursor: pointer;
+}
+.bottom-info {
+    padding: 10px 20px;
+    bottom: 0;
+    position: absolute;
+    left: 0;
+    width: 100%;
+    text-align: center; 
+    background-color: #f0f0f0;
+}
+
+

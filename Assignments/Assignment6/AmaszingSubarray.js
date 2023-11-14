@@ -44,25 +44,56 @@
 //   console.log("Substrings:", substrings);
 
 
-  function countAmazingSubstrings(S) {
-    const vowels = new Set(['a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U']);
-    const MOD = 10003;
-    let count = 0;
+  // function countAmazingSubstrings(S) {
+  //   const vowels = new Set(['a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U']);
+  //   const MOD = 10003;
+  //   let count = 0;
   
-    for (let i = 0; i < S.length; i++) {
-      if (vowels.has(S[i])) {
-        // Number of substrings starting with S[i] = length of the string - index of S[i]
-        count = (count + S.length - i) % MOD;
-        console.log(count);
-      }
+  //   for (let i = 0; i < S.length; i++) {
+  //     if (vowels.has(S[i])) {
+  //       // Number of substrings starting with S[i] = length of the string - index of S[i]
+  //       count = (count + S.length - i) % MOD;
+  //       console.log(count);
+  //     }
+  //   }
+  
+  //   return count;
+  // }
+  
+  // // Example usage:
+  // const inputString = "ABECURIKO";
+  // const result = countAmazingSubstrings(inputString);
+  // console.log(result); // Output: 6
+  
+
+// let vowels = ['a','e','i','o','u','A','E','I','O','U'];
+// let S = "ABECID";
+// let result=[]
+// for(let i=0; i<S.length;i++){
+//     if(vowels.includes(S[i]))
+//     for(let j=i; j<S.length;j++){
+//       result.push(S[j]);
+// }      
+// }
+// console.log(result)
+
+let vowels = ['a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U'];
+let S = "ABECID";
+let result = [];
+let count = 0;
+
+for (let i = 0; i < S.length; i++) {
+    if (vowels.includes(S[i])) {
+        let currentSubstring = '';
+        for (let j = i; j < S.length; j++) {
+            currentSubstring += S[j];
+            count++;
+            result.push(currentSubstring);
+        }
     }
-  
-    return count;
-  }
-  
-  // Example usage:
-  const inputString = "ABECURIKO";
-  const result = countAmazingSubstrings(inputString);
-  console.log(result); // Output: 6
-  
+}
+
+console.log(result);
+console.log(`Totla count of substrings starting with vowels are:`,{count})
+
   
