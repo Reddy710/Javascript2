@@ -7,6 +7,9 @@ img{
     width: 40%;
     height: auto;
 }
+i{
+    size: 3vh;
+}
 body {
     font-family: Arial, sans-serif;
     background-color:white;

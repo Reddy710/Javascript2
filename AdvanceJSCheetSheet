@@ -1,7 +1,21 @@
 Arrow functions
-ExecutionContext(Hoisting)
+ExecutionContext
+Memory Allocation(Hoisting)
 codeExecution
 callback Function - A function which is passed as an argument to other functions is called as call back function
 Higher Order Function - A function which is capable of taking callback function as an argument is called HOF
-Builtin Functions of HOF - map(), filter(), reduce()
+Builtin Functions of HOF - 
+1.map()- It is a method used to do some operations with the array elements and return a resulting array, 
+and it will not change the original array
+2.filter()
+3.reduce()
 DOM - Document object Model
+
+
+
+17/11/2023
+
+important for interview
+
+Events Propogation -- Event Bubbling,  Event capturing or trickling
+Event delegation --
